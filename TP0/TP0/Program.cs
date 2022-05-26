@@ -7,6 +7,7 @@ namespace TP0
         static void Main(string[] args)
         {
             Console.WriteLine("Hola mundo");
+            //Console.ReadKey();
         }
     }
 }
