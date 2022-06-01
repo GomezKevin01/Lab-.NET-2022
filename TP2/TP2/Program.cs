@@ -11,8 +11,8 @@ namespace TP2
         static void Main(string[] args)
         {
             Menu();
-
-            void Menu()
+        }
+            static void Menu()
             {
                 Console.WriteLine($"(1) Método que divide por cero y devuelve un mensaje de excepción.");
                 Console.WriteLine($"(2) Método que divide dos numeros y devuelve un mensaje de excepción si fallo algo.");
@@ -96,6 +96,6 @@ namespace TP2
                         break;
                 }
             }
-        }
+        
     }
 }
