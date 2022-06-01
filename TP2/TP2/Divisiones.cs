@@ -9,7 +9,6 @@ namespace TP2
     public class Divisiones
     {
 
-
         public static void DividirPorCero(int numero)
         {
             try
