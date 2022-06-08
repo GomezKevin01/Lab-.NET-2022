@@ -48,11 +48,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeesLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupplitersLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TP4.EF.Data\TP4.EF.Data.csproj">
+      <Project>{79CB0322-BAC3-4DB4-A49C-95CDDE2365A2}</Project>
+      <Name>TP4.EF.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TP4.EF.Entities\TP4.EF.Entities.csproj">
+      <Project>{E59A24D1-4A3D-42E6-B47A-5025D007CC58}</Project>
+      <Name>TP4.EF.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
