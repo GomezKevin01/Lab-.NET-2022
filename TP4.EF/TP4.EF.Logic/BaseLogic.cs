@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP4.EF.Data;
-using TP4.EF.Entities;
 
 namespace TP4.EF.Logic
 {
-    public class EmployeesLogic : BaseLogic
+    public class BaseLogic
     {
-        public List<Employees> GetAll()
+        protected readonly NorthwindContext context;
+
+        public BaseLogic()
         {
-            return context.Employees.ToList();
+            context = new NorthwindContext();
         }
     }
 }

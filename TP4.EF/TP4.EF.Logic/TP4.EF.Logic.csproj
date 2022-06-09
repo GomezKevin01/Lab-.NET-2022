@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseLogic.cs" />
     <Compile Include="EmployeesLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplitersLogic.cs" />

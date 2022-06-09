@@ -8,18 +8,92 @@ using TP4.EF.Entities;
 
 namespace TP4.EF.Logic
 {
-    public class SupplitersLogic
+    public class SupplitersLogic : BaseLogic
     {
-        private readonly NorthwindContext context;
-
-        public SupplitersLogic()
-        {
-            context = new NorthwindContext();
-        }
-
         public List<Suppliers> GetAll()
         {
             return context.Suppliers.ToList();
+        }
+
+        public void Add(Suppliers newSuppliers)
+        {
+            try
+            {
+                context.Suppliers.Add(newSuppliers);
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"\nERROR!!! No se completaron los datos obligatorios (*).");
+            }
+        }
+
+        public void Delete(int id)
+        {
+            try
+            {
+                var supliers = context.Suppliers.Find(id);
+                context.Suppliers.Remove(supliers);
+                context.SaveChanges();
+                Console.WriteLine($"\n¡Proveedor eliminado correctamente!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"\nNo se puede eliminar al proveedor seleccionado, ya que otra tabla depende de él.");
+            }           
+        }
+
+        public void Update(int id)
+        {
+            var suppliersUpdate = context.Suppliers.Find(id);
+
+            Console.WriteLine($"\n* Campo requerido");
+            Console.Write($"\nIngresar nombre de la Compania:* ");
+            string nombreCompania = Console.ReadLine();
+            Console.Write($"\nIngresar nombre de contacto: ");
+            string nombreContacto = Console.ReadLine();
+            Console.Write($"\nIngresar título del contacto: ");
+            string tituloContacto = Console.ReadLine();
+            Console.Write($"\nIngresar la dirección: ");
+            string direccion = Console.ReadLine();
+            Console.Write($"\nIngresar la ciudad: ");
+            string ciudad = Console.ReadLine();
+            Console.Write($"\nIngresar la región: ");
+            string region = Console.ReadLine();
+            Console.Write($"\nIngresar código postal: ");
+            string cdPostal = Console.ReadLine();
+            Console.Write($"\nIngresar el país: ");
+            string pais = Console.ReadLine();
+            Console.Write($"\nIngresar número de telefono: ");
+            string telefono = Console.ReadLine();
+            Console.Write($"\nIngresar Fax: ");
+            string fax = Console.ReadLine();
+            Console.Write($"\nIngresar dirección de página web: ");
+            string web = Console.ReadLine();
+
+            suppliersUpdate.CompanyName = nombreCompania;
+            suppliersUpdate.ContactName = nombreContacto;
+            suppliersUpdate.ContactTitle = tituloContacto;
+            suppliersUpdate.Address = direccion;
+            suppliersUpdate.City = ciudad;
+            suppliersUpdate.Region = region;
+            suppliersUpdate.PostalCode = cdPostal;
+            suppliersUpdate.Country = pais;
+            suppliersUpdate.Phone = telefono;
+            suppliersUpdate.Fax = fax;
+            suppliersUpdate.HomePage = web;
+
+            try
+            {
+                context.Entry(suppliersUpdate).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+                Console.WriteLine($"\n¡El proveedor se actualizo correctamente!");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine($"\nERROR!!! No se completaron los datos obligatorios (*).");
+            }
+
         }
     }
 }
