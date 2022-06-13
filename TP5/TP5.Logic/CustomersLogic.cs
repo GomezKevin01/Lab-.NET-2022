@@ -33,6 +33,7 @@ namespace TP5.Logic
             var query = from customers in context.Customers
                         join orders in context.Orders
                         on customers.CustomerID equals orders.CustomerID
+                        where customers.Region == "WA" & orders.OrderDate > new DateTime(1997, 1, 1)
                         select new Customers_Orders
                         {
                             orderID = orders.OrderID,

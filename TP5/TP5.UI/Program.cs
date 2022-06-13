@@ -26,8 +26,8 @@ namespace TP5.UI
                 Console.WriteLine($"(5) Mostar el primer elemento o nulo de una lista de productos" +
                                   $" donde el ID del producto sea igual a 789.");
                 Console.WriteLine($"(6) Mostrar nombres de los Customers en mayuscula y minuscula.");
-                Console.WriteLine($"(7) Mostrar Join entre Customers y Orders donde los customers sean" +
-                                  $" de la Región WA y la fecha de orden sea mayor a 1 / 1 / 1997.");
+                Console.WriteLine($"(7) Mostrar Join entre Customers y Orders donde los customers sean");
+                Console.WriteLine($"    de la Región WA y la fecha de orden sea mayor a 1 / 1 / 1997.");
                 Console.WriteLine($"(0) Salir.");
                 Console.Write($"\nIngrese una opción, mediante numeros: ");
                 op = int.Parse(Console.ReadLine());
@@ -119,7 +119,8 @@ namespace TP5.UI
                     break;
 
                 case 7:
-                    Console.WriteLine($"\nCustomers de la Región WA:");
+                    Console.WriteLine($"\nJoin entre Customers y Orders donde los customers" +
+                                      $" sean de la Región WA y la fecha de orden sea mayor a 1 / 1 / 1997:");
                     foreach (var item in customersLogic.CustomersJoinOrders())
                     {
                         Console.WriteLine($"{item.orderID}\t{item.customerID}\t{item.companyName}");
