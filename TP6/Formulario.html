@@ -1,29 +1,41 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Formulario</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js"></script>
         <link rel="stylesheet" type= text/css href="Estilos.css">
         <style>
-            #edad{width: 30px;}
-
+            #edad{width: 50px;}
         </style>
+        <script>
+        function resetform() {
+	    if($("#edad").val().length < 1  && $("#apellido").val().length < 1 && $("#nombre").val().length < 1 ){
+            alert("El formulario esta vacío");
+	    }
+	    else{
+		    $("form input[type=text], input[type=number]").each(function(){
+                 this.value = "";
+            })
+        }
+        }
+        </script>
+        <title>Formulario</title>
     </head>
     <body>
-        <section class="formulario">
-            <form  style = "width: 350px;" action="" method="post">
+        <section>
+            <form  id ="formulario" style = "width: 350px;" action="" method="post">
                 <fieldset>
                     <legend>Información Personal</legend>
                     <p>
                         <label>Nombre:</label>
-                        <input type="text" placeholder="Kevin" required>
+                        <input id ="nombre" type="text" placeholder="Kevin">
                     </p>
                     <p>
                         <label>Apellido:</label>
-                        <input type="text" placeholder="Gomez" required>
+                        <input id = "apellido" type="text" placeholder="Gomez">
                     </p>
                     <p>
                         <label>Edad:</label>
-                        <input id ="edad" type="text" placeholder="22" required>
+                        <input id ="edad" type="number" placeholder="22">
                      </p>
                     <p> 
                         <input type="radio" name="sexo" checked> Masculino<br>
@@ -39,7 +51,9 @@
                     </p>
                 </fieldset> 
                 <button type="submit" class="boton">Enviar</button> 
+                <button type ="button" onclick="resetform()" class="boton">Limpiar formulario</button> 
             </form>
         </section>
     </body>
+    <script type="text/javascript" src="jqueryScript.js"></script>
 </html>
