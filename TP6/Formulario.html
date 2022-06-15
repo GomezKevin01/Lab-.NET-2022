@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Formulario</title>
+        <link rel="stylesheet" type= text/css href="Estilos.css">
+        <style>
+            #edad{width: 30px;}
+
+        </style>
+    </head>
+    <body>
+        <section class="formulario">
+            <form  style = "width: 350px;" action="" method="post">
+                <fieldset>
+                    <legend>Información Personal</legend>
+                    <p>
+                        <label>Nombre:</label>
+                        <input type="text" placeholder="Kevin" required>
+                    </p>
+                    <p>
+                        <label>Apellido:</label>
+                        <input type="text" placeholder="Gomez" required>
+                    </p>
+                    <p>
+                        <label>Edad:</label>
+                        <input id ="edad" type="text" placeholder="22" required>
+                     </p>
+                    <p> 
+                        <input type="radio" name="sexo" checked> Masculino<br>
+                        <input type="radio" name="sexo"> Femenino<br>
+                        <input type="radio" name="sexo">Otro<br>
+                    </p> 
+                </fieldset>
+                <fieldset>
+                    <legend>Información Adicional</legend>                
+                    <p>
+                        <legend>Empresa:</legend>
+                        <textarea rows = "5" cols="30">Write something here.</textarea>
+                    </p>
+                </fieldset> 
+                <button type="submit" class="boton">Enviar</button> 
+            </form>
+        </section>
+    </body>
+</html>

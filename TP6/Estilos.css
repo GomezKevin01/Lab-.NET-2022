@@ -1,0 +1,10 @@
+form{
+    background-color: grey;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.boton{
+    background-color: rgb(0, 166, 255);
+    color: white;
+}
