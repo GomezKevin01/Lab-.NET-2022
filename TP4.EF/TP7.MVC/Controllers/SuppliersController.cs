@@ -53,7 +53,6 @@ namespace TP7.MVC.Controllers
             List<Suppliers> suppliers = suppliersLogic.GetAll();
             List<SuppliersModel> suppliersModel = suppliers.Where(s => s.SupplierID == id).Select(s => new SuppliersModel
             {
-                id = s.SupplierID,
                 nombre = s.CompanyName,
                 pais = s.Country
             }).ToList();
