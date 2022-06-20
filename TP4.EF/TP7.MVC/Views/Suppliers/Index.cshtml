@@ -2,10 +2,32 @@
     ViewBag.Title = "Lista de Proveedores";
 }
 @model List<TP7.MVC.Models.SuppliersModel>
+
+    @if (TP7.MVC.Controllers.SuppliersController.banderaEliminar == 1)
+    {
+        <script type="text/javascript">
+            alert("No se puede eliminar al proveedor seleccionado!!");
+        </script>
+        TP7.MVC.Controllers.SuppliersController.banderaEliminar = 999;
+    }
+    else if (TP7.MVC.Controllers.SuppliersController.banderaEliminar == 0)
+    {
+        <script type="text/javascript">
+            alert("Proveedor eliminado correctamente!!");
+        </script>
+        TP7.MVC.Controllers.SuppliersController.banderaEliminar = 999;
+    }
+    @if (TP7.MVC.Controllers.SuppliersController.banderaInsertar == 0)
+    {
+        <script type="text/javascript">
+            alert("Proveedor Añadido correctamente!");
+        </script>
+        TP7.MVC.Controllers.SuppliersController.banderaInsertar = 999;
+    }
 <div>
     <h1>Listado de Proveedores</h1>
-    <a href="/Suppliers/Insert" class="btn btn-default">Añadir Proveedor</a>
-    <table class="table">
+    <a href="/Suppliers/Insert" class="btn btn-primary">Añadir Proveedor</a><br><br>
+    <table class="table table-bordered table-hover">
         <thead>
             <tr>
                 <th>ID</th>

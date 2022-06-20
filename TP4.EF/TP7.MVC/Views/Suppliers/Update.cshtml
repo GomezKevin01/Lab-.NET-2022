@@ -1,6 +1,14 @@
-﻿@{
-    ViewBag.Title = "Modificar Proveedor";
+﻿@model List<TP7.MVC.Models.SuppliersModel>
+@{
+    ViewBag.Title = "Modificar Proveedor";    
 }
 <div>
     <h1>Modificar Proveedor</h1>
+    <form action="/Suppliers/ConfirmUpdate" method="post">
+        <label>Nombre:</label>
+        <input name="nombre" type="text" value="@Model.First().nombre" required><br><br>
+        <label style="padding-right: 23px">Pais:</label>
+        <input name="pais" type="text" value="@Model.First().pais" required><br><br>
+        <input type="submit" onclick= enable class="btn btn-success" value="Guardar">
+    </form>
 </div>

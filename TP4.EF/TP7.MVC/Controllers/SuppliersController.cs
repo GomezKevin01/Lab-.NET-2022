@@ -11,7 +11,11 @@ namespace TP7.MVC.Controllers
 {
     public class SuppliersController : Controller
     {
+        public static int banderaEliminar = 999;
+        public static int banderaInsertar = 999;
+        public static int idSupplier;
         SupplitersLogic suppliersLogic = new SupplitersLogic();
+
         public ActionResult Index()
         {           
             List<Suppliers> suppliers = suppliersLogic.GetAll();    
@@ -37,8 +41,35 @@ namespace TP7.MVC.Controllers
                 CompanyName = suppliersModel.nombre,
                 Country = suppliersModel.pais
             };
-
             suppliersLogic.Add(suppliersEntity);
+            banderaInsertar = 0;
+            return RedirectToAction("Index");
+
+        }
+        
+        public ActionResult Update(int id)
+        {
+            SuppliersController.idSupplier = id;
+            List<Suppliers> suppliers = suppliersLogic.GetAll();
+            List<SuppliersModel> suppliersModel = suppliers.Where(s => s.SupplierID == id).Select(s => new SuppliersModel
+            {
+                id = s.SupplierID,
+                nombre = s.CompanyName,
+                pais = s.Country
+            }).ToList();
+            return View(suppliersModel);
+        }
+
+        [HttpPost]
+        public ActionResult ConfirmUpdate(SuppliersModel suppliersModel)
+        {
+            var suppliersEntity = new Suppliers
+            {
+                SupplierID = idSupplier,
+                CompanyName = suppliersModel.nombre,
+                Country = suppliersModel.pais
+            };
+            suppliersLogic.Update(suppliersEntity);
             return RedirectToAction("Index");
         }
 
@@ -47,18 +78,14 @@ namespace TP7.MVC.Controllers
             try
             {
                 suppliersLogic.Delete(id);
-
+                banderaEliminar = 0;
                 return RedirectToAction("Index");
             }
             catch (Exception)
             {
-                return RedirectToAction("ErrorDeEliminacion");
-            }         
-        }
-        
-        public ActionResult ErrorDeEliminacion()
-        {
-            return View();
+                banderaEliminar = 1;
+                return RedirectToAction("Index");
+            }
         }
     }
 }

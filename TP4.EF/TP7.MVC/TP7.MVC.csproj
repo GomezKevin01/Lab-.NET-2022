@@ -171,7 +171,6 @@
     <Content Include="Views\Suppliers\Index.cshtml" />
     <Content Include="Views\Suppliers\Insert.cshtml" />
     <Content Include="Views\Suppliers\Update.cshtml" />
-    <Content Include="Views\Suppliers\ErrorDeEliminacion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
