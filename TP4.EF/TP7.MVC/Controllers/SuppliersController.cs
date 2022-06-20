@@ -52,8 +52,7 @@ namespace TP7.MVC.Controllers
             }
             catch (Exception)
             {
-
-                return RedirectToAction("Index","Error");
+                return RedirectToAction("ErrorDeEliminacion");
             }         
         }
         

@@ -32,8 +32,7 @@ namespace TP4.EF.Logic
         {
                 var supliers = context.Suppliers.Find(id);
                 context.Suppliers.Remove(supliers);
-                context.SaveChanges();  
-            
+                context.SaveChanges();    
         }
 
         public void Update(int id)
