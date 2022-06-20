@@ -30,17 +30,10 @@ namespace TP4.EF.Logic
 
         public void Delete(int id)
         {
-            try
-            {
                 var supliers = context.Suppliers.Find(id);
                 context.Suppliers.Remove(supliers);
-                context.SaveChanges();
-                Console.WriteLine($"\n¡Proveedor eliminado correctamente!");
-            }
-            catch (Exception)
-            {
-                Console.WriteLine($"\nNo se puede eliminar al proveedor seleccionado, ya que otra tabla depende de él.");
-            }           
+                context.SaveChanges();  
+            
         }
 
         public void Update(int id)
@@ -95,5 +88,6 @@ namespace TP4.EF.Logic
             }
 
         }
+        
     }
 }

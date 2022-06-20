@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Lista de Proveedores";
+}
+@model List<TP7.MVC.Models.SuppliersModel>
+<div>
+    <h1>Listado de Proveedores</h1>
+    <a href="/Suppliers/Insert" class="btn btn-default">Añadir Proveedor</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>País</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var suppliers in Model)
+            {
+                <tr>
+                    <td>@suppliers.id</td>
+                    <td>@suppliers.nombre</td>
+                    <td>@suppliers.pais</td>
+                    <td>@Html.ActionLink("Eliminar", "Delete", new { id = suppliers.id })</td>
+                    <td>@Html.ActionLink("Actualizar", "Update", new { id = suppliers.id })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

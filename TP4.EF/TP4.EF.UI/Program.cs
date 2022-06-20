@@ -69,7 +69,7 @@ namespace TP4.EF.UI
                     Console.WriteLine($"\nProveedores:");
                     foreach (var item in suppliters.GetAll())
                     {
-                        Console.WriteLine($"\nNombre: {item.CompanyName}\nPais: {item.Country}" +
+                        Console.WriteLine($"\niD: {item.SupplierID}\nNombre: {item.CompanyName}\nPais: {item.Country}" +
                         $"\nCiudad: {item.City}\nDirección: {item.Address}");
                     }
                     Console.Write($"\nPresione ENTER para continuar");
@@ -118,7 +118,7 @@ namespace TP4.EF.UI
                     Console.Write($"\nIngresa el ID del proveedor que desea eliminar: ");
                     id = int.Parse(Console.ReadLine());
 
-                    suppliters.Update(id);
+                    suppliters.Delete(id);
                     Console.Write($"\nPresione ENTER para continuar");
                     Console.ReadLine();
                     Console.Clear();
