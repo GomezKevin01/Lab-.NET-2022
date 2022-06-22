@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Valores API random";
+}
+<div>
+    <br><br>
+    <h1>Valores API random</h1>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>País</th>
+                <th>Género</th>
+                <th>Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var personas in Model.Results)
+            {
+            <tr>
+                <td>@personas.Name.First</td>
+                <td>@personas.Name.Last</td>
+                <td>@personas.Location.Country</td>
+                <td>@personas.Gender</td>
+                <td><img src="@personas.Picture.Medium" alt="Alternate Text" /></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
