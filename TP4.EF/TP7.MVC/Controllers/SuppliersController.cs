@@ -14,7 +14,7 @@ namespace TP7.MVC.Controllers
         public static int banderaEliminar = 999;
         public static int banderaInsertar = 999;
         public static int idSupplier;
-        SupplitersLogic suppliersLogic = new SupplitersLogic();
+        SuppliersLogic suppliersLogic = new SuppliersLogic();
 
         public ActionResult Index()
         {           
@@ -44,7 +44,6 @@ namespace TP7.MVC.Controllers
             suppliersLogic.Add(suppliersEntity);
             banderaInsertar = 0;
             return RedirectToAction("Index");
-
         }
         
         public ActionResult Update(int id)

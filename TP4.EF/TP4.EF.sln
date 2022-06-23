@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP4.EF.Entities", "TP4.EF.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP7.MVC", "TP7.MVC\TP7.MVC.csproj", "{77629229-6388-4E4C-9158-93C5D7576D1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP8.API", "TP8.API\TP8.API.csproj", "{896F26D9-B2F6-4D85-9351-07EF86A1843E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{77629229-6388-4E4C-9158-93C5D7576D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77629229-6388-4E4C-9158-93C5D7576D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77629229-6388-4E4C-9158-93C5D7576D1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{896F26D9-B2F6-4D85-9351-07EF86A1843E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896F26D9-B2F6-4D85-9351-07EF86A1843E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896F26D9-B2F6-4D85-9351-07EF86A1843E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896F26D9-B2F6-4D85-9351-07EF86A1843E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

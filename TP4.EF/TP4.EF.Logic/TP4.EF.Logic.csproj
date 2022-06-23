@@ -51,7 +51,7 @@
     <Compile Include="BaseLogic.cs" />
     <Compile Include="EmployeesLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SupplitersLogic.cs" />
+    <Compile Include="SuppliersLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

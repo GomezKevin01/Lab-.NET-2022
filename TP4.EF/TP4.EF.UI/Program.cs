@@ -45,7 +45,7 @@ namespace TP4.EF.UI
         {
             int id;
             EmployeesLogic employees = new EmployeesLogic();
-            SupplitersLogic suppliters = new SupplitersLogic();
+            SuppliersLogic suppliters = new SuppliersLogic();
             switch (op)
             {
                 case 0:

@@ -18,28 +18,29 @@ namespace TP4.EF.Entities
         public int SupplierID { get; set; }
 
         [Required]
-        [StringLength(40)]
+        [StringLength(60)]
         public string CompanyName { get; set; }
 
-        [StringLength(30)]
+        [StringLength(60)]
         public string ContactName { get; set; }
 
-        [StringLength(30)]
+        [StringLength(60)]
         public string ContactTitle { get; set; }
 
         [StringLength(60)]
         public string Address { get; set; }
 
-        [StringLength(15)]
+        [StringLength(60)]
         public string City { get; set; }
 
-        [StringLength(15)]
+        [StringLength(60)]
         public string Region { get; set; }
 
         [StringLength(10)]
         public string PostalCode { get; set; }
 
-        [StringLength(15)]
+        [Required]
+        [StringLength(60)]
         public string Country { get; set; }
 
         [StringLength(24)]

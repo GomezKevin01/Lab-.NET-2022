@@ -14,10 +14,10 @@ namespace TP7.MVC.Controllers
         // GET: APIrandom
         public ActionResult Index()
         {
-            var url = "https://randomuser.me/api/?results=10";
+            var url = "https://randomuser.me/api/?results=20";
             WebClient wc = new WebClient();
             var datos = wc.DownloadString(url);
-            var resultado = JsonConvert.DeserializeObject<Resultado>(datos); 
+            ListaResultado resultado = JsonConvert.DeserializeObject<ListaResultado>(datos);
             return View(resultado);
         }
     }

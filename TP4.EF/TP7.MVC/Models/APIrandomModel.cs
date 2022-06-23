@@ -5,33 +5,6 @@ using System.Web;
 
 namespace TP7.MVC.Models
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
-    public class Coordinates
-    {
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
-    }
-
-    public class Dob
-    {
-        public DateTime Date { get; set; }
-        public int Age { get; set; }
-    }
-
-    public class Id
-    {
-        public string Name { get; set; }
-        public object Value { get; set; }
-    }
-
-    public class Info
-    {
-        public string Seed { get; set; }
-        public int Results { get; set; }
-        public int Page { get; set; }
-        public string Version { get; set; }
-    }
-
     public class Location
     {
         public Street Street { get; set; }
@@ -39,19 +12,6 @@ namespace TP7.MVC.Models
         public string State { get; set; }
         public string Country { get; set; }
         public string Postcode { get; set; }
-        public Coordinates Coordinates { get; set; }
-        public Timezone Timezone { get; set; }
-    }
-
-    public class Login
-    {
-        public string Uuid { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Salt { get; set; }
-        public string Md5 { get; set; }
-        public string Sha1 { get; set; }
-        public string Sha256 { get; set; }
     }
 
     public class Name
@@ -68,32 +28,20 @@ namespace TP7.MVC.Models
         public string Thumbnail { get; set; }
     }
 
-    public class Registered
-    {
-        public DateTime Date { get; set; }
-        public int Age { get; set; }
-    }
-
     public class Result
     {
         public string Gender { get; set; }
         public Name Name { get; set; }
         public Location Location { get; set; }
         public string Email { get; set; }
-        public Login Login { get; set; }
-        public Dob Dob { get; set; }
-        public Registered Registered { get; set; }
         public string Phone { get; set; }
         public string Cell { get; set; }
-        public Id Id { get; set; }
         public Picture Picture { get; set; }
-        public string Nat { get; set; }
     }
 
-    public class Resultado
+    public class ListaResultado
     {
         public List<Result> Results { get; set; }
-        public Info Info { get; set; }
     }
 
     public class Street
@@ -101,12 +49,5 @@ namespace TP7.MVC.Models
         public int Number { get; set; }
         public string Name { get; set; }
     }
-
-    public class Timezone
-    {
-        public string Offset { get; set; }
-        public string Description { get; set; }
-    }
-
 
 }
