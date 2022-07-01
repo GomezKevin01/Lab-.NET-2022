@@ -1,0 +1,14 @@
+<div class="container pt-3">
+    <h1>Añadir Proveedores</h1>
+    <form [formGroup]="form" (ngSubmit)="guardar()">
+        <div class="form group">
+            <label>Nombre:</label>
+            <input formControlName="nombre" type="text" placeholder="Coca Cola"><br><br>
+        </div>
+        <div class="form group">
+            <label style="padding-right: 23px">Pais:</label>
+            <input formControlName="pais" type="text" placeholder="Argentina"><br><br>
+        </div>
+        <button type="submit" class="btn btn-success">Añadir</button>
+    </form>
+</div>

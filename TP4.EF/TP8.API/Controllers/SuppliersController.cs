@@ -8,9 +8,11 @@ using System.Web.Http.Description;
 using TP4.EF.Entities;
 using TP4.EF.Logic;
 using TP7.MVC.Models;
+using System.Web.Http.Cors;
 
 namespace TP8.API.Controllers
 {
+    [EnableCors(origins: "*", headers:"*",methods:"*")]
     public class SuppliersController : ApiController
     {
         SuppliersLogic suppliersLogic = new SuppliersLogic();
