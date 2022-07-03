@@ -1,0 +1,14 @@
+<div class="container pt-3" >
+    <h1>Modificar Proveedor</h1>
+    <form [formGroup]="form">
+        <div>
+            <label>Nombre:</label>
+            <input formControlName="nombre" type="text" [ngModel]="suppliers.nombre"><br><br>
+        </div>
+        <div>
+            <label style="padding-right: 23px">Pais:</label>
+            <input formControlName="pais" type="text" [ngModel]="suppliers.pais" ><br><br>
+        </div>
+        <button type="submit" class="btn btn-success" (click)="modificar()">Modificar</button>
+    </form>
+</div>

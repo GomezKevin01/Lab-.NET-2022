@@ -16,7 +16,11 @@
         <td>{{item.id}}</td>
         <td>{{item.nombre}}</td>
         <td>{{item.pais}}</td>
-        <td><a class="btn boton btn-success">Modificar</a></td>
+        <td>
+          <button class="btn boton btn-success" [routerLink]="['modificar',item.id]">
+            Modificar
+          </button>
+        </td>
         <td>
           <button class="btn boton btn-danger" (click)="eliminar(item)">
             Eliminar

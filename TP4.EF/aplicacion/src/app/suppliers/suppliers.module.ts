@@ -5,11 +5,13 @@ import { CrearComponent } from './crear/crear/crear.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ActualizarComponent } from './actualizar/actualizar/actualizar.component';
 
 @NgModule({
   declarations: [
     ListadoComponent,
-    CrearComponent
+    CrearComponent,
+    ActualizarComponent
   ],
   imports: [
     CommonModule,

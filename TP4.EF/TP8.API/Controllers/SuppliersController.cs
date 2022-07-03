@@ -30,6 +30,21 @@ namespace TP8.API.Controllers
             return suppliersModel;
         }
 
+        // GET: api/Suppliers/id
+        public SuppliersModel GetSupplier(int id)
+        {
+            SuppliersModel suppliersModel = new SuppliersModel();
+
+            var suppliers = from s in suppliersLogic.GetAll()
+                            where s.SupplierID == id
+                            select s;
+
+            suppliersModel.id = id;
+            suppliersModel.nombre = suppliers.First().CompanyName;
+            suppliersModel.pais = suppliers.First().Country;
+            return suppliersModel;
+        }
+
         // POST: api/Suppliers
         public IHttpActionResult PostSuppliers(SuppliersModel suppliersModel)
         {
